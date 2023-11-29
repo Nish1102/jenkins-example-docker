@@ -5,7 +5,10 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'node --version'
+        dir(env.WORKSPACE) {
+          sh 'node --version'
+          // Add more commands as needed
+        }
       }
     }
   }
